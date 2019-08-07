@@ -388,15 +388,19 @@ input[type=email]:focus {
         background-position-y: bottom;
     }
 
+    nav {
+        text-align: right;
+    }
+
     .hamburger {
         display: block;
         text-align: right;
         font-size: 5rem;
-        padding: 25px;
+        padding: 25px 35px;
         margin: 0;
     }
-
-    .top-menu,
+    
+    .top-menu li:not(:first-child),
     .social-icons {
         display: none;
     }
@@ -406,10 +410,6 @@ input[type=email]:focus {
         width: 50%;
         padding-left: 3%;
     }
-    
-    /* h2 {
-        font-size: 4.2rem;
-    } */
     
     .menu h2,
     .experience h2,
@@ -486,7 +486,6 @@ input[type=email]:focus {
 
 @media (max-width: 800px) {
     header {
-        /* min-height: 720px; */
         background-size: 600px;
         background-position-x: left -100px;
     }
@@ -494,8 +493,8 @@ input[type=email]:focus {
     h1 {
         width: 60%;
         line-height: 9rem;
-        margin-left: 40%;
-        margin-top: 10px;
+        margin-left: 35%;
+        margin-top: 30px;
     }
     
     .right-photo img,
@@ -557,8 +556,9 @@ input[type=email]:focus {
     h1 {
         font-size: 8rem;
         line-height: 8rem;
-        margin-left: 30%;
         padding-left: 0;
+        margin-top: 70px;
+        margin-left: 30%;
     }
 }
 
@@ -629,7 +629,8 @@ input[type=email]:focus {
 
 @media (max-width: 380px) {
     h1 {
-        font-size: 6.8rem;
+        width: 100%;
+        font-size: 6.5rem;
         line-height: 6.8rem;
     }
     
