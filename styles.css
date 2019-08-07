@@ -16,13 +16,20 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 
 html {
     font-size: 62.5%; /* 1 rem = 10px */
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
 }
 
 body {
+    font-family: 'Montserrat', sans-serif;
     font-size: 2rem; /* sets default size to 20px so if I forget to size anything, it will still be legible */
+    font-weight: 400;
     margin: 0;
+}
+
+h2,
+h3,
+.read-more,
+input[type=submit] {
+    font-weight: 700;
 }
 
 p {
@@ -35,9 +42,11 @@ p, a, button {
 
 p, 
 nav li, 
-button {
+button,
+input[type=submit] {
     line-height: 2.9rem;
 }
+
 /* ============ */
 /* == HEADER == */
 /* ============ */
@@ -46,15 +55,6 @@ button {
     width: 80%;
     max-width: 1200px;
     margin: 0 auto;
-}
-
-li {
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-    transition: all 0.5s;
 }
 
 header {
@@ -66,6 +66,15 @@ header {
 
 .uppercase {
     text-transform: uppercase;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.5s;
 }
 
 .hamburger {
@@ -104,11 +113,12 @@ h1 {
     line-height: 12rem;
     margin-left: 50%;
     margin-top: 200px;
+    font-weight: 400; /* for some reason h1 didn't get styled by body */
 }
 
 .social-icons {
-    width: 3%;
     float: right;
+    width: 3%;
     margin-top: 200px;
     margin-right: 1%;
 }
@@ -131,20 +141,20 @@ h1 {
 
 .menu-blurb,
 .exp-blurb {
-    width: 45%;
     padding-top: 10%;
     float: left;
+    width: 45%;
 }
 
 .right-photo {
-    width: 50%;
     float: right;
+    width: 50%;
 }
 
 .left-photo {
-    width: 50%;
     clear: both;
     float: left;
+    width: 50%;
 }
 
 img {
@@ -153,17 +163,15 @@ img {
 }
 
 h2 {
-    margin: 0;
     font-size: 4.2rem;
-    font-weight: 700;
+    margin: 0;
 }
 
 .read-more,
-input[type=submit]{
-    font-size: 2rem;
-    font-weight: 700;
-    border: 3px solid #e75605;
+input[type=submit] {
     background: white;
+    border: 3px solid #e75605;
+    font-size: 2rem;
     padding: 10px 20px;
     margin-top: 2%;
     transition: all 0.5s;
@@ -220,15 +228,12 @@ input[type=submit]:focus {
 }
 
 .info a,
-.info p {
+h3 {
     color: white;
 }
 
-.info p {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
+h3 {
     font-size: 3rem;
-
 }
 
 .info i {
@@ -295,6 +300,7 @@ footer {
 .contact {
     clear: both;
 }
+
 .contact,
 .newsletter {
     float: left;
@@ -304,7 +310,7 @@ footer {
 
 input[type=email] {
     width: 60%;
-    height: 50px;
+    height: 55px;
     border: 3px solid white;
     padding: 0 0 0 15px;
     font-size: 2rem;
@@ -323,7 +329,6 @@ input[type=email]:focus {
 
 .copyright {
     clear: both;
-    
     background-color: #1f2022;
     text-align: center;
 }
@@ -338,6 +343,7 @@ input[type=email]:focus {
 /* =================== */
 /* == MEDIA QUERIES == */
 /* =================== */
+
 @media (max-width: 1315px) {
     header {
         height: 95vh;
@@ -361,7 +367,6 @@ input[type=email]:focus {
         font-size: 3.2rem;
     }
 }
-
 
 @media (max-width: 1200px) {
     header {
@@ -393,12 +398,12 @@ input[type=email]:focus {
     input[type=email]::placeholder {
         text-align: center;
     }
-
 }
 
 @media (max-width: 997px) {
     header {
         height: 100vh;
+        min-height: 650px;
         background-size: 600px;
         background-position-x: left -30%;
         background-position-y: bottom;
@@ -468,7 +473,6 @@ input[type=email]:focus {
 
 @media (max-width: 920px) {
     header {
-        min-height: 720px;
         background-position-x: left -50%;
     }
     
@@ -502,6 +506,7 @@ input[type=email]:focus {
 
 @media (max-width: 800px) {
     header {
+        min-height: 700px;
         background-size: 600px;
         background-position-x: left -100px;
     }
@@ -564,7 +569,6 @@ input[type=email]:focus {
 
 @media (max-width: 670px) {
     header {
-        max-height: 720px;
         background-size: 500px;
         background-position-x: left -100px;
     }
@@ -580,7 +584,7 @@ input[type=email]:focus {
 
 @media (max-width: 570px) {
     h1 {
-        margin-left: 0%;
+        margin-left: 15%;
     }
     
     h2 {
@@ -598,7 +602,7 @@ input[type=email]:focus {
         margin: 20% auto;
     }
     
-    .info p {
+    h3 {
         font-size: 2.4rem;
     }
     
@@ -613,6 +617,7 @@ input[type=email]:focus {
         margin: 4% 0;
         width: 100%;
     }
+
     footer nav {
         height: auto;
     }
@@ -636,6 +641,14 @@ input[type=email]:focus {
 }
 
 @media (max-width: 400px) {
+    h1 {
+        margin-left: 5%;
+    }
+    
+    h2 {
+        font-size: 2.8rem;
+    }
+
     .right-photo img,
     .left-photo img {
         height: 250px;
@@ -651,8 +664,8 @@ input[type=email]:focus {
     }
     
     p {
-        font-size: 1.6rem;
-        line-height: 1.8rem;
+        font-size: 1.8rem;
+        line-height: 2.2rem;
     }
 }
 
