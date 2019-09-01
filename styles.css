@@ -10,10 +10,27 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 
 .visually-hidden:not(:focus):not(:active) { position: absolute; width: 1px; height: 1px; margin: -1px;border: 0;padding: 0;white-space: nowrap;clip-path: inset(100%);clip: rect(00 0 0);overflow: hidden;}
 
+
+/* ============= */
+/* == GENERAL == */
+/* ============= */
+ul {
+    display: inline-block;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.5s;
+}
+
 /* ================ */
 /* == TYPOGRAPHY == */
 /* ================ */
-
 html {
     font-size: 62.5%; /* 1 rem = 10px */
 }
@@ -23,6 +40,7 @@ body {
     font-size: 2rem; /* sets default size to 20px so if I forget to size anything, it will still be legible */
     font-weight: 400;
     margin: 0;
+    position: relative;
 }
 
 h2,
@@ -47,9 +65,9 @@ input[type=submit] {
     line-height: 2.9rem;
 }
 
-/* ============ */
-/* == HEADER == */
-/* ============ */
+.uppercase {
+    text-transform: uppercase;
+}
 
 .wrapper {
     width: 80%;
@@ -57,24 +75,16 @@ input[type=submit] {
     margin: 0 auto;
 }
 
+
+/* ============ */
+/* == HEADER == */
+/* ============ */
 header {
-    background-image: url(assets/header-burger.png);
-    background-size: contain;
-    height: 95vh;
-    background-repeat: no-repeat;
-}
-
-.uppercase {
-    text-transform: uppercase;
-}
-
-li {
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-    transition: all 0.5s;
+    background: rgba(255,255,255,0.8);
+    height: 10vh;
+    position: sticky;
+    top: 0;
+    z-index: 99;
 }
 
 .hamburger {
@@ -82,13 +92,11 @@ a {
 }
 
 nav {
-    height: 40px;
     text-align: center;
 }
 
-ul {
-    display: inline-block;
-    padding: 0;
+nav ul {
+    margin: 0;
 }
 
 nav li {
@@ -103,6 +111,16 @@ h1,
 h2,
 .social-icons a {
     color: #e75605;
+}
+
+/* ============ */
+/* ==  HERO  == */
+/* ============ */
+.hero {
+    background-image: url(assets/header-burger.png);
+    background-size: contain;
+    height: 85vh;
+    background-repeat: no-repeat;
 }
 
 h1 {
@@ -356,8 +374,7 @@ input[type=email]:focus {
 /* =================== */
 
 @media (max-width: 1315px) {
-    header {
-        height: 95vh;
+    .hero {
         background-size: contain;
         background-position-x: left -20%;
     }
@@ -366,7 +383,7 @@ input[type=email]:focus {
         font-size: 13rem;
         padding-left: 1%;
     }
-}
+} /* end of 1315px */
 
 @media (max-width: 1240px) {
     .menu-blurb,
@@ -377,10 +394,10 @@ input[type=email]:focus {
     h2 {
         font-size: 3.2rem;
     }
-}
+} /* end of 1240px */
 
 @media (max-width: 1200px) {
-    header {
+    .hero {
         background-position-x: left -40%;
     }
 
@@ -388,10 +405,10 @@ input[type=email]:focus {
         font-size: 11rem;
         padding-left: 0;
     }
-}
+} /* end of 1200px */
 
 @media (max-width: 1120px) {
-    header {
+    .hero {
         background-position-x: left -60%;
     }
     
@@ -409,11 +426,15 @@ input[type=email]:focus {
     input[type=email]::placeholder {
         text-align: center;
     }
-}
+} /* end of 1120px */
 
 @media (max-width: 997px) {
     header {
-        height: 100vh;
+        background: none;
+    }
+
+    .hero {
+        height: 90vh;
         min-height: 650px;
         background-size: 600px;
         background-position-x: left -30%;
@@ -427,7 +448,7 @@ input[type=email]:focus {
     .hamburger {
         display: block;
         text-align: right;
-        font-size: 5rem;
+        font-size: 4rem;
         padding: 25px 35px;
         margin: 0;
     }
@@ -480,10 +501,10 @@ input[type=email]:focus {
         margin: 0 auto;
         height: auto;
     }
-}
+} /* end of 997px */
 
 @media (max-width: 920px) {
-    header {
+    .hero {
         background-position-x: left -50%;
     }
     
@@ -512,11 +533,10 @@ input[type=email]:focus {
         width: 75%;
         margin: 1% 0;
     }
-
-}
+} /* end of 920 */
 
 @media (max-width: 800px) {
-    header {
+    .hero {
         min-height: 700px;
         background-size: 600px;
         background-position-x: left -100px;
@@ -576,10 +596,10 @@ input[type=email]:focus {
     .gram li:last-child {
         margin-left: 1%;
     }
-}
+} /* end of 800px */
 
 @media (max-width: 670px) {
-    header {
+    .hero {
         background-size: 500px;
         background-position-x: left -100px;
     }
@@ -591,7 +611,7 @@ input[type=email]:focus {
         margin-top: 70px;
         margin-left: 30%;
     }
-}
+} /* end of 670px */
 
 @media (max-width: 570px) {
     h1 {
@@ -649,7 +669,7 @@ input[type=email]:focus {
     input[type=submit] {
         width: 100%;
     }
-}
+} /* end of 570px */
 
 @media (max-width: 400px) {
     h1 {
@@ -665,7 +685,7 @@ input[type=email]:focus {
         height: 250px;
         object-fit: cover;
     }
-}
+} /* end of 400px */
 
 @media (max-width: 380px) {
     h1 {
@@ -678,5 +698,5 @@ input[type=email]:focus {
         font-size: 1.8rem;
         line-height: 2.2rem;
     }
-}
+} /* end of 380px */
 
