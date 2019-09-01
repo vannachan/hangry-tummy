@@ -276,6 +276,7 @@ h3 {
 .gram li {
     float: left;
     width: calc(96% / 3);
+    overflow: hidden;
 }
 
 .gram li:first-child,
@@ -286,6 +287,16 @@ h3 {
 .gram li:last-child,
 .gram li:nth-child(2) {
     margin-left: 1%;
+}
+
+.gram li:hover img,
+.gram li:focus img {
+    transform: scale(1.08);
+}
+
+.gram img {
+    max-width: 100%;
+    transition: all 0.3s;
 }
 
 /* ============ */
