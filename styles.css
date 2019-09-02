@@ -673,12 +673,12 @@ input[type=email]:focus {
 } /* end of 670px */
 
 @media (max-width: 570px) {
-    .hamburger {
-        padding-right: 25px;
-    }
-
     .top-menu {
         width: 100vw;
+    }
+
+    nav ul {
+        width: 100%;
     }
 
     h1 {
@@ -755,10 +755,6 @@ input[type=email]:focus {
 } /* end of 400px */
 
 @media (max-width: 380px) {
-    .hamburger {
-        padding-top: 20px;
-    }
-
     h1 {
         width: 100%;
         font-size: 6.5rem;
