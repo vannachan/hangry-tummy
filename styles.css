@@ -449,16 +449,13 @@ input[type=email]:focus {
         display: none;
     }
 
-    .top-menu{
-        opacity: 0;
+    .top-menu {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
         background: #e75605;
         padding-top: 100px;
-        transition: opacity 0.5s linear;
-    }
-
-    .top-menu {
-        position: absolute;
-        right: 0;
         text-align: right;
         width: 350px;
         height: 100vh;
@@ -494,10 +491,7 @@ input[type=email]:focus {
     }
 
     .hamburger:checked ~ .top-menu {
-        opacity: 1;
-        position: absolute;
-        top: 0;
-        right: 0;
+        display: block;
         z-index: 10;
     }
     
@@ -506,12 +500,12 @@ input[type=email]:focus {
         width: 100%;
     }
 
-    nav a {
+    .top-menu a {
         color: white;
     }
 
-    nav li:hover a,
-    nav li:focus a {
+    .top-menu li:hover a,
+    .top-menu li:focus a {
         color: #1f2022;
     }
 
