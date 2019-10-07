@@ -58,6 +58,14 @@ p, a, button {
     color: #1f2022;
 }
 
+.story p {
+    text-transform: uppercase;
+    color: #aaa;
+    letter-spacing: 0.5px;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
 p, 
 nav li, 
 button,
@@ -114,6 +122,43 @@ h1,
 h2,
 .social-icons a {
     color: #e75605;
+}
+
+/* ==================== */
+/*  Play Story Section  */
+/* ==================== */
+.story {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    height: 40px;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 99;
+    cursor: pointer;
+}
+
+.story .icon-container {
+    width: 35px;
+    height: 35px;
+}
+
+.story p {
+    margin-left: 5px;
+}
+
+.story audio {
+    width: 270px;
+}
+
+.story .show {
+    display: block;
+}
+
+.story .hidden {
+    display: none;
 }
 
 /* ============ */
@@ -648,6 +693,12 @@ input[type=email]:focus {
         margin-left: 1%;
     }
 } /* end of 800px */
+
+@media (max-width: 768px) {
+    .story audio {
+        width: 250px;
+    }
+} /* end of 768px */
 
 @media (max-width: 670px) {
     .hero {

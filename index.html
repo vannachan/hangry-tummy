@@ -37,6 +37,22 @@
         </nav>
     </header>
 
+    <section class="story">
+        <div class="icon-container show" aria-label="Listen to story">
+            <svg version="1.1" class="play-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 58 58" style="enable-background:new 0 0 58 58;" xml:space="preserve">
+                <circle style="fill:#F2F3F4;" cx="29" cy="29" r="29"/>
+                <g>
+                    <polygon style="fill:#4A4A4A;" points="44,29 22,44 22,29.273 22,14 	"/>
+                </g>
+            </svg>
+        </div>
+        <p class="story-text show">Listen to story</p>
+        <audio class="hidden" controls src="./assets/19559.mp3">
+            Your browser does not support the
+            <code>audio</code> element.
+        </audio>
+    </section>
+
     <section class="hero" id="home" >
         <!-- HANGRY TUMMY TITLE -->
         <div class="wrapper">
@@ -186,5 +202,25 @@
         </section>
     </footer>
     
+    <!-- Load in jQuery and Smooth Scroll -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.2.0/jquery.smooth-scroll.min.js"></script>
+
+	<script>
+
+        $(document).ready(function(){
+
+            $('a').smoothScroll();
+
+            $('.story').on('click', function(){
+                $('.icon-container').toggleClass('show').toggleClass('hidden');
+                $('.story-text').toggleClass('show').toggleClass('hidden');
+                $('audio').toggleClass('show').toggleClass('hidden');
+                $('audio').trigger("play");
+            });
+		});
+    </script>
 </body>
 </html>
